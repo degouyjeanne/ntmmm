@@ -1,0 +1,162 @@
+/* RESET SIMPLE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(120deg, #f0f4f8, #e6eef5);
+    color: #2c2c2c;
+    margin: 0;
+}
+
+/* CONTENEUR BANNIÈRE */
+.banniere {
+    width: 100%;
+    height: 320px;      /* encore un peu plus haute */
+    overflow: hidden;   /* coupe l'excès si nécessaire */
+    margin: 0;
+    padding: 0;
+}
+
+/* IMAGE DANS LA BANNIÈRE */
+.banniere img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* garde le ratio, recadre si nécessaire */
+    display: block;
+    border-radius: 0;
+}
+
+
+/* TITRE SECTIONS */
+h2 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: #3a5a78;
+    font-size: 1.6rem;
+    position: relative;
+}
+
+/* LIGNE SOUS H2 */
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #8bbcd9;
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+/* TEXTE H3 */
+h3 {
+    font-weight: 400;
+    margin: 10px 0 10px 20px;
+    font-size: 1.05rem;
+}
+
+/* LIENS RÉSEAUX */
+a {
+    display: inline-block;
+    margin: 20px 15px 0 0;
+}
+
+a img {
+    width: 45px;
+    height: 45px;
+    filter: grayscale(30%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+a img:hover {
+    transform: scale(1.15);
+    filter: grayscale(0%);
+}
+
+.contenu {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;  /* centré sur mobile */
+}
+
+@media (min-width: 1200px) {
+    .contenu {
+        text-align: left;  /* texte à gauche sur grand écran */
+        padding-left: 20px;
+        padding-right: 0;
+        margin: 40px;
+    }
+    .bulle-bleue {
+        background: linear-gradient(135deg, #e6f1f8, #f4f9fd);
+        border-left: 6px solid #8bbcd9;
+        padding: 25px 30px;
+        margin: 40px 0;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(58, 90, 120, 0.15);
+    }
+
+    /* TEXTE DANS LA BULLE */
+    .bulle-bleue h3 {
+        margin: 0 0 20px 0;
+        font-size: 1.1rem;
+        color: #2f4f6f;
+        line-height: 1.6;
+    }
+
+    /* LISTE */
+    .bulle-bleue ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    /* ÉLÉMENTS DE LISTE */
+    .bulle-bleue li {
+        position: relative;
+        padding-left: 28px;
+        margin-bottom: 10px;
+        font-size: 1.05rem;
+        color: #2c2c2c;
+    }
+
+    /* PUCE PERSONNALISÉE */
+    .bulle-bleue li::before {
+        content: "●";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #8bbcd9;
+        font-size: 1.2rem;
+    }
+.localisation-wrapper {
+    position: relative; /* référence pour le papillon */
+    margin-top: 40px;
+}
+
+.papillon-localisation {
+    position: absolute;
+    top: 0;
+    right: -180px;
+    width: 500px;   /* ⬅️ plus grand */
+    opacity: 0.8;
+}
+
+/* ADAPTATION GRAND ÉCRAN */
+@media (max-width: 1200px) {
+    .papillon-localisation {
+        right: -100px;
+        width: 110px;
+    }
+}
+
+/* MOBILE : on enlève le papillon */
+@media (max-width: 768px) {
+    .papillon-localisation {
+        display: none;
+    }
+}
+}
